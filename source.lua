@@ -239,7 +239,7 @@ function library:Watermark(text)
     local backgroundLayout = Instance.new("UIListLayout")
 
     watermark.Name = "Watermark"
-    watermark.Parent = screen
+    watermark.Parent = CoreGuiService
     watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
     watermarkLayout.Name = "watermarkLayout"
@@ -523,7 +523,7 @@ function library:InitNotifications(text, duration, callback)
     local notificationsPadding = Instance.new("UIPadding")
 
     Notifications.Name = "Notifications"
-    Notifications.Parent = screen
+    Notifications.Parent = CoreGuiService
     Notifications.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     notificationsLayout.Name = "notificationsLayout"
