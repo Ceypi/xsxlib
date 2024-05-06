@@ -238,7 +238,7 @@ function library:Watermark(text)
     local waterPadding = Instance.new("UIPadding")
     local backgroundLayout = Instance.new("UIListLayout")
 
-    watermark.Name = "Watermark"
+    watermark.Name = "watermark"
     watermark.Parent = CoreGuiService
     watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
