@@ -5,6 +5,16 @@
     problem with other people using it, please just make sure you message me and ask me before using.
 ]]
 
+--[[
+    - bungie's discord doesnt work and i really cant be bothered to ask him for permission since im only editing his script and havent removed his original message.
+    - I will be adding a few things to this gui so that i can use it for my private gui use.
+
+    Ceypi's additions 
+    -- added a full on remove gui feature to actually delete the screen??
+
+
+]]
+
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -195,6 +205,14 @@ function library:UnlockFps(new) -- syn only
     end
 end
 
+function library:Remove()
+    for _,v in pairs(CoreGuiService:GetChildren()) do
+        if v.Name == "watermark" or v.Name == "Notifications" or v.Name == "screen" then
+            v:Destroy()
+        end
+    end    
+end
+
 function library:Watermark(text)
     for i,v in pairs(CoreGuiService:GetChildren()) do
         if v.Name == "watermark" then
@@ -220,8 +238,8 @@ function library:Watermark(text)
     local waterPadding = Instance.new("UIPadding")
     local backgroundLayout = Instance.new("UIListLayout")
 
-    watermark.Name = "watermark"
-    watermark.Parent = CoreGuiService
+    watermark.Name = "Watermark"
+    watermark.Parent = screen
     watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
     watermarkLayout.Name = "watermarkLayout"
@@ -505,7 +523,7 @@ function library:InitNotifications(text, duration, callback)
     local notificationsPadding = Instance.new("UIPadding")
 
     Notifications.Name = "Notifications"
-    Notifications.Parent = CoreGuiService
+    Notifications.Parent = screen
     Notifications.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     notificationsLayout.Name = "notificationsLayout"
